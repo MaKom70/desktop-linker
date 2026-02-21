@@ -1,0 +1,36 @@
+app-id: io.github.desktoplinker
+runtime: org.gnome.Platform
+runtime-version: '47'
+sdk: org.gnome.Sdk
+command: desktop-linker
+
+finish-args:
+  # Wayland + X11 display access
+  - --socket=wayland
+  - --socket=fallback-x11
+  - --share=ipc
+  # Access to home directory (to read files and write to Desktop)
+  - --filesystem=home
+  # Access to system .desktop files for app list
+  - --filesystem=/usr/share/applications:ro
+  - --filesystem=/var/lib/flatpak/exports/share/applications:ro
+  - --filesystem=/var/lib/snapd/desktop/applications:ro
+  # Needed for xdg-open
+  - --talk-name=org.freedesktop.portal.OpenURI
+
+modules:
+  - name: desktop-linker
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 desktop_linker.py /app/bin/desktop-linker-py
+      - install -Dm644 desktop-linker.desktop /app/share/applications/io.github.desktoplinker.desktop
+      - install -Dm755 desktop-linker-wrapper /app/bin/desktop-linker
+    sources:
+      - type: file
+        path: desktop_linker.py
+      - type: file
+        path: desktop-linker.desktop
+      - type: script
+        dest-filename: desktop-linker-wrapper
+        commands:
+          - exec python3 /app/bin/desktop-linker-py "$@"
