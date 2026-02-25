@@ -86,7 +86,39 @@ TRANSLATIONS = {
         "about_app":            "Erstellt Desktop-Verknüpfungen für Dateien, Ordner und Anwendungen.",
         "about_version":        "Version",
         "about_developer":      "Entwickler",
-    }
+    },
+    "ar": {
+        "app_title":            "Desktop Linker",
+        "tab_files":            "ملف / مجلد",
+        "tab_apps":             "التطبيقات",
+        "drop_hint":            "اسحب ملف او مجلد هنا\nاو استخدم اﻷزرار في اﻷسفل",
+        "no_path":              "لم يتم تحديد الموقع",
+        "select_file_folder":   "اختر ملفاً او مجلداً",
+        "btn_choose_file":      "اختر الملف",
+        "btn_choose_folder":    "اختر المجلد",
+        "shortcut_name":        "اسم اﻷختصار",
+        "configure_shortcut":   "التعديل على اﻷختصار",
+        "custom_icon":          "ايقونة مخصصة (اختياري)",
+        "no_icon":              "لم يتم اختيار ايقونة مخصصة - سوف تستخدم ايقونة افتراضية",
+        "btn_choose_icon":      "اختر ايقونة",
+        "btn_clear_icon":       "ازالة اﻷيقونة",
+        "btn_create_file":      "صنع الاختصار",
+        "btn_create_app":       "صنع اختصار لتطبيق",
+        "search_placeholder":   "ابحث التطبيقات...",
+        "unknown_app":          "غير معرف",
+        "dialog_file_title":    "اختر الملف",
+        "dialog_folder_title":  "اختر المجلد",
+        "dialog_icon_title":    "اختر اﻷيقونة",
+        "filter_images":        "(PNG, SVG, XPM) الصور",
+        "toast_created":        "تم صنع اﻷختصار: {}",
+        "toast_error":          "خطا: {}",
+        "toast_no_file":        "الرجاء اختر ملف او مجلد اولاً!",
+        "toast_no_app":         "الرجاء اختر تطبيقاً من القائمة املاً!",
+        "lang_button_tooltip":  "التحويل الى الانجليزية",
+        "about_app":            "صنع اختصارات للتطبيقات, والملفات, والمجلدات في سطح المكتب",
+        "about_version":        "اﻷصدار",
+        "about_developer":      "صانع البرنامج",
+    },
 }
 
 APP_VERSION = "1.0.0"
@@ -99,6 +131,8 @@ def detect_language():
         lang = locale.getlocale()[0] or ""
         if lang.startswith("de"):
             return "de"
+        elif lang.startswith("ar"):
+            return "ar"
     except Exception:
         pass
     return "en"
