@@ -118,7 +118,7 @@ TRANSLATIONS = {
         "about_app":            "صنع اختصارات للتطبيقات, والملفات, والمجلدات في سطح المكتب",
         "about_version":        "اﻷصدار",
         "about_developer":      "صانع البرنامج",
-    },
+    }
 }
 
 APP_VERSION = "1.0.0"
