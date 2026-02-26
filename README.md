@@ -15,7 +15,7 @@ Desktop Linker lets you create shortcuts for files, folders and installed applic
 - 📁 **Files & Folders** – Drag & drop or use the file dialog
 - 🖥️ **Applications** – Browse all installed apps with search
 - 🎨 **Custom Icons** – Optional custom icon for any shortcut
-- 🌍 **English & German** – Auto-detects system language, switchable at runtime
+- 🌍 **English, German & Arabic** – Auto-detects system language, switchable at runtime
 - 📦 **Works everywhere** – Compatible with GNOME, KDE, XFCE, COSMIC and more
 
 ---
